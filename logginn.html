@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- CSS-styling for innloggingen -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link rel="stylesheet" href="./body.css">
+</head>
+<body>
+
+    <h1 id="logg-inn">Logg inn</h1>
+    <div id="firebaseui-auth-container"></div>
+
+<!-- Firebase-kode fra Firebase.konsollen -->
+<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyAG80sm3UcOkMx751O0agAX83wgnaT6WKI",
+    authDomain: "fir-test-ccda0.firebaseapp.com",
+    databaseURL: "https://fir-test-ccda0.firebaseio.com",
+    projectId: "fir-test-ccda0",
+    storageBucket: "fir-test-ccda0.appspot.com",
+    messagingSenderId: "876690579210"
+    };
+    firebase.initializeApp(config);
+</script>
+    
+<!-- Kode fra Firebase.auth -->
+<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<script type="text/javascript">
+    // FirebaseUI config.
+    var uiConfig = {
+        signInSuccessUrl: 'index.html', // Hvor blir man sendt til etter suksess-innlogging
+        signInOptions: [
+        // Leave the lines as is for the providers you want to offer your users.
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,        
+        firebase.auth.EmailAuthProvider.PROVIDER_ID
+        ],
+        // tosUrl and privacyPolicyUrl accept either url string or a callback
+        // function.
+        // Terms of service url/callback.
+        tosUrl: '<your-tos-url>',
+        // Privacy policy url/callback.
+        privacyPolicyUrl: function() {
+        window.location.assign('<your-privacy-policy-url>');
+        }
+    };
+
+    // Initialize the FirebaseUI Widget using Firebase.
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    // The start method will wait until the DOM is loaded.
+    ui.start('#firebaseui-auth-container', uiConfig);
+</script>
+
+</body>
+</html>

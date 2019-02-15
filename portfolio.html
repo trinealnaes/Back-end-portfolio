@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="body.css">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <section id="intro-section">
+    <header>
+        <h2><a href="portfolio.html">Trine Alnæs</a></h2>
+        <ul id="menu">
+            <li class="menu-btn" id="prosjekter" onmouseover="liftedEyebrow()" onmouseout="mainFace()"><a>Prosjekter</a></li>
+            <li class="menu-btn" id="kontakt" onmouseover="whatFace()" onmouseout="mainFace()"><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </header>
+
+    <div id="header-img">
+    </div>
+
+    <ul id="soMe">
+        <li><a class="fab fa-behance-square" href="https://www.behance.net/TrineAlnaes" target="_blank"></a></li>
+        <li><a class="fab fa-github-square" href="https://github.com/trinealnaes" target="_blank"></a></li>
+        <li><a class="fab fa-codepen" href="https://codepen.io/trinealnaes/" target="_blank"></a></li>
+        <li><a class="fab fa-dribbble" href="https://dribbble.com/trinealnaes" target="_blank"></a></li>
+        <li><a class="fab fa-instagram" href="https://www.instagram.com/trine_alnaes/" target="_blank"></a></li>
+    </ul>
+
+    <p id="scroll-til-prosjekter" onmouseover="winkFace()" onmouseout="mainFace()"><span class="fas fa-chevron-down"></span>Prosjekter</p>
+    </section>
+
+    <main>
+
+    </main>
+    
+
+<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyAG80sm3UcOkMx751O0agAX83wgnaT6WKI",
+    authDomain: "fir-test-ccda0.firebaseapp.com",
+    databaseURL: "https://fir-test-ccda0.firebaseio.com",
+    projectId: "fir-test-ccda0",
+    storageBucket: "fir-test-ccda0.appspot.com",
+    messagingSenderId: "876690579210"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script src="./portfolio.js"></script>
+</body>
+</html>

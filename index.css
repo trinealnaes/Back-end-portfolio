@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1rem;
+    font-family: 'avenir', 'montserrat', sans-serif;;
+}
+
+main {
+    max-width: 700px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    /* background-color: #eee; */
+    margin-bottom: 1rem;
+    border-bottom: .5px solid #909090;
+}
+
+h1 strong {
+    padding: 0.5rem 1rem;
+}
+
+/* Liste over bildene som blir lastet opp */
+#ulBilder img {
+    height: 2rem;
+}
+
+#bildecontainer {
+    overflow:hidden;
+}
+
+@keyframes slide {
+    from {transform: translateX(-300px)}
+}
+
+.slide-in {
+    animation: slide 1s ease-in-out;
+}
+
+#overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+#overlay img {
+    width: 64px;
+}
+
+#skjemaBilder {
+    height: 200px;
+    display: grid;
+    grid-template-rows: 25px 0px 25px 30px 25px;
+    grid-row-gap: 1rem;
+}
+
+label {
+    padding-top: .15%;
+}
+
+.show-for-sr {
+    visibility: hidden;
+}
+
+#skjemaInfo {
+    display: grid;
+    grid-template-columns: 100px 150px 100px 150px;
+    grid-template-rows: 30px 30px 30px;
+    grid-gap: 1rem;
+}
+
+.button {
+    border: .5px solid black;
+    border-radius: 20px;
+    width: 100px;
+    height: 20px;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+}
+
+#portfolio-button .button {
+    margin-top: 50px;
+    height: 25px;
+    width: 120px;
+}

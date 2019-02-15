@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Opprett et nytt prosjekt</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.1/css/foundation-float.css"> -->
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    
+    <main>
+        <section class="bilde-opplasting">
+            <h1><strong>1</strong>Last opp ett eller flere bilder til prosjektet</h1>
+            <form id="skjemaBilder">
+                <label for="inpBilde" class="button">Velg bilde</label>
+                <input type="file" accept="image/*, video/*" id="inpBilde" class="show-for-sr">
+                <span id="infoBilde">Velg bilde</span>
+                <input type="text" id="inpTekst" required placeholder="Beskrivelse av bildet">
+                <button class="button" type="submit">Last opp bilde</button>
+            </form>
+            <div class="callout success" id="bildecontainer">
+                <p id="infoOpplasting">Ingen bilder lastet opp ennå</p>
+                <div id="ulBilder"></div>
+            </div>
+        </section>
+
+        <section class="info-prosjekt">
+            <h1><strong>2</strong>Hva handler dette prosjektet om</h1>
+            <form id="skjemaInfo">
+                <label>Tittel</label>
+                <input type="text" id="inpTittel" required>
+                <label>Oppgave</label>
+                <input type="text" id="fagfelt" required>
+                <label>Beskrivelse</label>
+                <textarea id="taBeskrivelse"></textarea> <!-- Kan bytte ut med texteditor -->
+                <label>Verktøy</label>
+                <input type="text" id="verktoy" required>
+                <button class="button expanded" type="submit">Lagre prosjekt</button>
+            </form>
+        </section>
+        <div id="portfolio-button">
+            <button class="button" onclick="window.open('portfolio.html')">Vis portefølje</button>
+        </div>
+    </main>
+
+    <div id="overlay">
+        <img src="./ikoner/spinner.gif">
+        <p>Laster opp bilde...</p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAG80sm3UcOkMx751O0agAX83wgnaT6WKI",
+        authDomain: "fir-test-ccda0.firebaseapp.com",
+        databaseURL: "https://fir-test-ccda0.firebaseio.com",
+        projectId: "fir-test-ccda0",
+        storageBucket: "fir-test-ccda0.appspot.com",
+        messagingSenderId: "876690579210"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+/* INTRO-SECTION */
+header {
+    width: 90vw;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    /* border: 1px solid orange; */
+}
+
+header h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #505050;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+/* MENY */
+#menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#menu li {
+    display: inline;
+    margin-right: 60px;
+    cursor: pointer;
+    text-align: center;
+    border-bottom: .5px solid white;
+    transition: .3s ease;
+}
+
+#menu li:hover { 
+    border-bottom: .5px solid #9fc5cc;
+}
+
+/* INTRO-BILDE I HEADER */
+#header-img {
+    width: 80vw;
+    height: 90vh;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    background-image: url(bilder/face-front.png);
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position: center 100px;
+    transition: all .4s ease;
+    /* background-color: #9fc5cc; */
+}
+
+/* SO-ME MENY */ 
+ul#soMe {
+    height: 220px;
+    position: fixed;
+    top: 30%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+    margin-left: 25px;
+    padding: 0;
+
+    z-index: 50;
+}
+
+#soMe li {
+    list-style-type: none;
+    font-size: 1.25rem;
+    color: rgb(35, 35, 35);
+}
+
+#soMe li a {
+    color: rgb(35, 35, 35);
+    text-decoration: none;
+}
+
+p#scroll-til-prosjekter {
+    position: absolute;
+    width: 10%;
+    left: 45%;
+    bottom: 5%;
+    font-size: .8rem;
+    color: rgb(35, 35, 35);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* pil nedover og kryss */
+span.fa-chevron-down::before {
+    content: "\f078";
+    position: absolute;
+    top: 32px;
+}
+
+span.fa-chevron-down::before {
+    text-decoration: inherit;
+    font-size: 1.6rem;
+    color: rgb(35, 35, 35);
+    -webkit-text-stroke: 2px rgba(255, 255, 255);
+}
+
+/* PROSJEKT-SECTIONS */
+.scroll-container {
+    position: relative;
+    height: 750px;
+    width: 98vw;
+    overflow-x: hidden;
+    overflow-y: hidden; /* overflow-y: hidden og padding - for å få tilbake riktig posisjon */
+    padding-top: -30px; /* pga. krysset (.kryss-ut) som dytter section opp */
+    margin: 100px auto;
+}
+
+#prosjekt-section {
+    position: relative;
+    height: 100%;
+    width: 4100px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#prosjekt-section #section1, #section2, #section3 {
+    position: relative;
+}
+
+img.bilde1 {
+    position: absolute;
+    top: 8.5%;
+    left: 22%;
+    width: 500px;
+    height: auto;
+}
+
+img.bilde2 {
+    position: absolute;
+    top: 7.5%;
+    left: 15%;
+    width: 500px;
+    height: auto;
+}
+
+img.bilde3 {
+    position: absolute;
+    top: 7.5%;
+    left: 34%;
+    width: 500px;
+    height: auto;
+}
+
+video.bilde3 {
+    position: absolute;
+    top: 15%;
+    left: 18%;
+    width: auto;
+    height: 500px;
+}
+
+h1.prosjekt-tittel {
+    position: absolute;
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'Playfair Display', 'Frank Ruhl Libre', serif;
+    color: white;
+    z-index: 1;
+
+    left: 50%;
+    top: 35%;
+    width: auto;
+    line-height: 4rem;
+}
+
+p.prosjekt-fagfelt {
+    position: absolute;
+    color: white;
+    width: 21%;
+    left: 60%;
+    top: 51%;
+}
+
+.prosjekt-bakgrunn {
+    position: absolute;
+    top: 19%;
+    left: 42%;
+    width: 550px;
+    height: 450px;
+    background-color: #9fc5cc;
+    /* background-color: rgb(255, 241, 160); */ 
+    z-index: -10;
+}
+
+.tekstfelt {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    top: 19%;
+    left: 70%;
+    display: grid;
+    grid-template-rows: 1fr 35px 1fr;
+}
+
+.prosjekt-beskrivelse {
+    height: 200px;
+    left: 65%;
+    top: 19%;
+}
+
+.prosjekt-verktoy {
+    height: 100px;
+    left: 65%;
+    top: 50%;
+}
+
+.scroll-container .les-mer {
+    transform: rotate(270deg);
+    color: rgb(35, 35, 35);
+    border-bottom: .5px solid #9fc5cc;
+    width: 40px;
+    margin: 0;
+    padding-left: .5%;
+    right: 5%;
+    top: 45%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.fa-times::before {
+    content: "\f00d";
+    text-decoration: inherit;
+    font-size: 1.6rem;
+    color: rgb(160, 160, 160);
+}
+
+.scroll-container .kryss-ut {
+    width: 30px;
+    height: 30px;
+    margin-left: 93%;
+    left: 2%;
+    -webkit-text-stroke: 2px rgba(255, 255, 255);
+    cursor: pointer;
+    position: sticky;
+    transform: translateY(-415px);
+    visibility: hidden;
+}
